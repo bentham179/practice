@@ -1,0 +1,10 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+
+button {
+    width: 150px;
+    height: 150px;
+}

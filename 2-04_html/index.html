@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>template</title>
+
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>タイトル</h1>
+<h2>サブタイトル</h2>
+</div><!-- /.header-contents -->；
+</header>
+<div class="main-wrapper">
+<section>
+	<p id="choice">
+
+    </p>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+   var answer = parseInt(window.prompt('数字を当ててね！'));
+   var number = Math.floor(Math.random()*6);
+    var message;
+    console.log(answer, number);
+   if(answer === number){
+       message = 'atari';
+   } else if(answer < number){
+       message = 'zannen!mottoookii';
+   } else if(answer > number){
+       message = 'zannen!mottotiisai';
+   } else{
+       message = '0~5';
+   }
+window.alert(message);
+   
+</script>
+</body>
+</html>
