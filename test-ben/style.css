@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: rgb(21, 21, 194);
+    color: #fff;
+}
+
+p {
+    margin: 0;
+}
+
+@keyframes yoko-move {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+.hoge {
+    animation-name: yoko-move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    display: inline-block;
+}
