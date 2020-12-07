@@ -164,5 +164,69 @@ for (var i = 0; i <= 20; i = i + 1) {
     console.log(i);
 }
 
+// イベント付与
 
-var P = document.querySelector('p');
+const clickHandler = function(event) {
+    console.log(event);
+
+    if (event.altKey) {
+        console.log('hoge!');
+    }
+}
+
+let counter = 0;
+const clickHandlerCounter = function() {
+    counter++;
+    console.log(counter);
+}
+
+const btn = document.querySelector('.btn');
+
+btn.onclick = clickHandler;
+btn.onclick = clickHandlerCounter;
+
+const btnAddEvent = document.querySelector('.btnAddEvent');
+
+btnAddEvent.addEventListener('click', clickHandler);
+btnAddEvent.addEventListener('click', function () {
+    counter = counter + 5;
+    console.log(counter);
+});
+
+
+
+// 指定要素にclassを追加する
+var addClass = document.querySelector('p');
+addClass.classList.add('huga');
+console.log(addClass);
+
+
+// 指定要素のclassを削除する
+addClass.classList.remove('huga');
+
+
+// 指定要素が指定のclassを持っているか判定する
+var result = addClass.classList.contains('hoge');
+console.log(result);
+
+
+
+// JSでdiv要素を生成する
+var Cdiv = document.createElement('div');
+var Cp = document.createElement('p');
+console.log(Cdiv)
+Cdiv.classList.add('piyo');
+Cdiv.insertAdjacentElement('beforeend', Cp);
+Cp.textContent = 'プロパティ';
+
+
+// 生成したdiv要素をbodyの最後の子要素として追加する
+document.body.appendChild(Cdiv);
+// btnAddEvent.insertAdjacentElement('beforeend', Cdiv);
+
+
+
+// 指定の要素のstyle属性を変更して、背景色を変更する。
+Cp.style.backgroundColor = "red";
+
+
