@@ -54,6 +54,7 @@ item1.addEventListener('click', function(){
         teban =true
     }
 });
+
 item2.addEventListener('click', function(){
     console.log(2)
     if(teban) {
