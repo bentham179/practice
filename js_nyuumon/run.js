@@ -4,7 +4,7 @@
 
 // 要素の取得をquerySelector / querySelectorAll にする
 
-
+//formの使い方がよくわかっていない
 
 /*document.getElementById('form').onsubmit = function() {
     var search = document.getElementById('form').word.value;
@@ -20,9 +20,19 @@ var date = now.getDate();
 var hour = now.getHours();
 var min = now.getMinutes();
 
+//var ampmに直接if文を入れたい
+var ampm = '';
+if (hour < 12) {
+    ampm = 'a.m.';
+}else {
+    ampm ='p.m.';
+};
 
-var output = year + '/' + (month + 1) + '/' + date + '/' + hour + '/' + min;
+var output = year + '/' + (month + 1) + '/' + date + ' ' + (hour % 12) + ':' + min + ampm;
 document.querySelector('.time').textContent = output;
+
+
+
 
 var addZero = function(num,digit) {
     var numString = String(num);
@@ -34,13 +44,30 @@ var addZero = function(num,digit) {
 
 //console.log(addZero(1,2));
 
-var songs = ['a','b','c'];
-//var list = document.querySelector('.list');
+var songs = [
+    'song1',
+    'song2',
+    'song3',
+    'song4',
+    'song5',
+    'song6',
+    'song7',
+    'song8',
+    'song9',
+    'song10',
+    'song11',
+    'song12'
+];
+var list = document.querySelector('.list');
 
-for(var i = 0; i < songs.length; i = i++) {
+//i++は「i=i+1」と同じ意味（？）　「i=i++」は間違い（？）
+for(var i = 0; i < songs.length; i++) {
     var paragraph = document.createElement('p');
     paragraph.textContent =addZero(i + 1,2) + '.' + songs[i];
-    document.getElementById('list').appendChild(paragraph);
+    list.appendChild(paragraph);
 };
 
-
+var point = function(num,digit) {
+    var time = Math.pow(10,digit);
+    return Math.floor(num * time) / time;
+}
